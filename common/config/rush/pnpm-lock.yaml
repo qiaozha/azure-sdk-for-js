@@ -70,6 +70,7 @@ specifiers:
   '@rush-temp/arm-iothub': file:./projects/arm-iothub.tgz
   '@rush-temp/arm-keyvault': file:./projects/arm-keyvault.tgz
   '@rush-temp/arm-kubernetesconfiguration': file:./projects/arm-kubernetesconfiguration.tgz
+  '@rush-temp/arm-kusto': file:./projects/arm-kusto.tgz
   '@rush-temp/arm-labservices': file:./projects/arm-labservices.tgz
   '@rush-temp/arm-links': file:./projects/arm-links.tgz
   '@rush-temp/arm-loadtestservice': file:./projects/arm-loadtestservice.tgz
@@ -119,6 +120,7 @@ specifiers:
   '@rush-temp/arm-resourcehealth': file:./projects/arm-resourcehealth.tgz
   '@rush-temp/arm-resourcemover': file:./projects/arm-resourcemover.tgz
   '@rush-temp/arm-resources': file:./projects/arm-resources.tgz
+  '@rush-temp/arm-resources-profile-2020-09-01-hybrid': file:./projects/arm-resources-profile-2020-09-01-hybrid.tgz
   '@rush-temp/arm-resources-subscriptions': file:./projects/arm-resources-subscriptions.tgz
   '@rush-temp/arm-search': file:./projects/arm-search.tgz
   '@rush-temp/arm-security': file:./projects/arm-security.tgz
@@ -373,6 +375,7 @@ dependencies:
   '@rush-temp/arm-resourcehealth': file:projects/arm-resourcehealth.tgz
   '@rush-temp/arm-resourcemover': file:projects/arm-resourcemover.tgz
   '@rush-temp/arm-resources': file:projects/arm-resources.tgz
+  '@rush-temp/arm-resources-profile-2020-09-01-hybrid': file:projects/arm-resources-profile-2020-09-01-hybrid.tgz
   '@rush-temp/arm-resources-subscriptions': file:projects/arm-resources-subscriptions.tgz
   '@rush-temp/arm-search': file:projects/arm-search.tgz
   '@rush-temp/arm-security': file:projects/arm-security.tgz
@@ -11458,6 +11461,31 @@ packages:
       - supports-color
     dev: false
 
+  file:projects/arm-resources-profile-2020-09-01-hybrid.tgz:
+    resolution: {integrity: sha512-uiAtFpyAfL60OgPZPOGUJAkjPGrsLPruvS2OLmqMvk1EiTVd7QNTqzTgqtNvYs/YxRmuc65w1Kp6MzfKQMyCCQ==, tarball: file:projects/arm-resources-profile-2020-09-01-hybrid.tgz}
+    name: '@rush-temp/arm-resources-profile-2020-09-01-hybrid'
+    version: 0.0.0
+    dependencies:
+      '@azure-tools/test-recorder': 1.0.2
+      '@microsoft/api-extractor': 7.19.4
+      '@rollup/plugin-commonjs': 11.0.2_rollup@1.32.1
+      '@rollup/plugin-json': 4.1.0_rollup@1.32.1
+      '@rollup/plugin-multi-entry': 3.0.1_rollup@1.32.1
+      '@rollup/plugin-node-resolve': 8.4.0_rollup@1.32.1
+      cross-env: 7.0.3
+      mkdirp: 1.0.4
+      mocha: 7.2.0
+      rimraf: 3.0.2
+      rollup: 1.32.1
+      rollup-plugin-sourcemaps: 0.4.2_rollup@1.32.1
+      tslib: 2.3.1
+      typescript: 4.2.4
+      uglify-js: 3.14.5
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: false
+
   file:projects/arm-resources-subscriptions.tgz:
     resolution: {integrity: sha512-Y8XL95tGixEM0br4pDJgRVqqa4CZWJRbu1SGkBtHZNKbpJ1aU3OXeei1dk84bEtu+FvjDh3j2QOFKKhnMoSFgA==, tarball: file:projects/arm-resources-subscriptions.tgz}
     name: '@rush-temp/arm-resources-subscriptions'
@@ -13125,7 +13153,7 @@ packages:
     dev: false
 
   file:projects/core-http.tgz:
-    resolution: {integrity: sha512-dr/zKAzLJeqdjfjldg208kPRFEMAH6gtQCxlOVWj3j6aBWvXZLWYoH6DirE5GNgn3uQc6sWDfI58qL4w6hqmNQ==, tarball: file:projects/core-http.tgz}
+    resolution: {integrity: sha512-hNWQdd9zZmCEndn+4Bl3G0/90xrJnP8QjWHnB7gbiAJTfQHSW1rePvYICZi2X3IW+mtuqsJod+5kD2DF3F92vg==, tarball: file:projects/core-http.tgz}
     name: '@rush-temp/core-http'
     version: 0.0.0
     dependencies:
@@ -15388,7 +15416,7 @@ packages:
     dev: false
 
   file:projects/schema-registry-avro.tgz:
-    resolution: {integrity: sha512-nYoV4QCq4gGBjhk2hz9opui4CbCRNv3bcVGgDVCIqiso9PbCyWb6CqNqsSZyT7F2NIpVfGSNtElbrVDgx/2i/g==, tarball: file:projects/schema-registry-avro.tgz}
+    resolution: {integrity: sha512-5UtOuttINU0oudMsUZZu5Oe/UEj0uR1Y8R/rGnzNq8YPJCpscqQ2QjGXpT0LKv6Xf3vhNVhUdcg4eRaHTok/Rg==, tarball: file:projects/schema-registry-avro.tgz}
     name: '@rush-temp/schema-registry-avro'
     version: 0.0.0
     dependencies:
@@ -15441,7 +15469,7 @@ packages:
     dev: false
 
   file:projects/schema-registry.tgz:
-    resolution: {integrity: sha512-fucVewqXE8TZV5enQSHpfLRsx8+I+1w1Cec81+x0xHbAcEs0ykoXa7NCNYQMAPi+V0Pu99w+Hqmjsrbn1SK6yg==, tarball: file:projects/schema-registry.tgz}
+    resolution: {integrity: sha512-bC/6TQwVav+spG+JqNxPVKgzAgTI2cYjiU/y2+r3RXlD8Wv/w2p99jyDQGcB+nALLOPMDPUAszhc8iUgFUEwSw==, tarball: file:projects/schema-registry.tgz}
     name: '@rush-temp/schema-registry'
     version: 0.0.0
     dependencies:
@@ -15482,7 +15510,6 @@ packages:
     transitivePeerDependencies:
       - bufferutil
       - debug
-      - encoding
       - supports-color
       - utf-8-validate
     dev: false
