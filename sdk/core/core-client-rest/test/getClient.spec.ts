@@ -39,19 +39,20 @@ describe("getClient", () => {
       await client.pathUnchecked("/foo").get();
     });
 
-    it("should replace existing apiVersion to requests with client api-version", async () => {
+    it("should not replace existing apiVersion to requests with client api-version", async () => {
       const defaultHttpClient = getCachedDefaultHttpsClient();
       sinon.stub(defaultHttpClient, "sendRequest").callsFake(async (req) => {
         return { headers: createHttpHeaders(), status: 200, request: req } as PipelineResponse;
       });
 
       const apiVersion = "2021-11-18";
+      const apiVersion1 = "1233321";
       const client = getClient("https://example.org?api-version=1233321", { apiVersion });
       const validationPolicy: PipelinePolicy = {
         name: "validationPolicy",
         sendRequest: (req, next) => {
-          assert.include(req.url, `api-version=${apiVersion}`);
-          assert.notInclude(req.url, "api-version=1233321");
+          assert.include(req.url, `api-version=${apiVersion1}`);
+          assert.notInclude(req.url, `api-version=${apiVersion}`);
           return next(req);
         },
       };
@@ -59,6 +60,59 @@ describe("getClient", () => {
       client.pipeline.addPolicy(validationPolicy, { afterPhase: "Serialize" });
 
       await client.pathUnchecked("/foo").get();
+    });
+
+    it("should include query apiVersion to requests", async () => {
+      const defaultHttpClient = getCachedDefaultHttpsClient();
+      sinon.stub(defaultHttpClient, "sendRequest").callsFake(async (req) => {
+        return { headers: createHttpHeaders(), status: 200, request: req } as PipelineResponse;
+      });
+
+      const apiVersion = "2021-11-18";
+      const client = getClient("https://example.org");
+      const validationPolicy: PipelinePolicy = {
+        name: "validationPolicy",
+        sendRequest: (req, next) => {
+          assert.include(req.url, `api-version=${apiVersion}`);
+          return next(req);
+        },
+      };
+
+      client.pipeline.addPolicy(validationPolicy, { afterPhase: "Serialize" });
+
+      await client.pathUnchecked("/foo").get({
+        queryParameters: {
+          "api-version": apiVersion
+        }
+      });
+    });
+
+
+    it("should not replace api version in query parameter in the requests even if client api version is set", async () => {
+      const defaultHttpClient = getCachedDefaultHttpsClient();
+      sinon.stub(defaultHttpClient, "sendRequest").callsFake(async (req) => {
+        return { headers: createHttpHeaders(), status: 200, request: req } as PipelineResponse;
+      });
+
+      const apiVersion = "2021-11-18";
+      const apiVersion1 = "1233321";
+      const client = getClient("https://example.org", { apiVersion });
+      const validationPolicy: PipelinePolicy = {
+        name: "validationPolicy",
+        sendRequest: (req, next) => {
+          assert.include(req.url, `api-version=${apiVersion1}`);
+          assert.notInclude(req.url, `api-version=${apiVersion}`);
+          return next(req);
+        },
+      };
+
+      client.pipeline.addPolicy(validationPolicy, { afterPhase: "Serialize" });
+
+      await client.pathUnchecked("/foo").get({
+        queryParameters: {
+          "api-version": apiVersion1,
+        },
+      });
     });
   });
 

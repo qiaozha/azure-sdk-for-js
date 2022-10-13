@@ -15,8 +15,8 @@ export function apiVersionPolicy(options: ClientOptions): PipelinePolicy {
   return {
     name: apiVersionPolicyName,
     sendRequest: (req, next) => {
-      if (options.apiVersion) {
-        const url = new URL(req.url);
+      const url = new URL(req.url);
+      if (options.apiVersion && !url.searchParams.get("api-version")) {
         // add or replace the exiting api-version with client one
         url.searchParams.set("api-version", options.apiVersion);
         req.url = url.toString();
