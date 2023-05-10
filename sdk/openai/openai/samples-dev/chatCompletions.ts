@@ -30,6 +30,7 @@ export async function main() {
   const result = await client.getChatCompletions(deploymentId, chat);
 
   console.log(result.choices?.[0].message);
+
 }
 
 main().catch((err) => {
