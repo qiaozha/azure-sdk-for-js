@@ -27,6 +27,16 @@
       "import": "./dist-esm/src/rest/index.js"
     }
   },
+  "typesVersions": {
+    "*": {
+      "api": [
+        "./types/src/api/index.js"
+      ],
+      "rest": [
+        "./types/src/rest/index.js"
+      ]
+    }
+  },
   "//metadata": {
     "constantPaths": [
       {
