@@ -2,12 +2,12 @@
 // Licensed under the MIT license.
 
 import { ClientOptions } from "@azure-rest/core-client";
-import { BarContext } from "../../bar/rest/index.js";
-import getClient from "../../bar/rest/index.js";
+import { BarContext } from "@msinternal/multiclient/bar/rest";
+import getClient from "@msinternal/multiclient/bar/rest";
 
 export interface BarClientOptions extends ClientOptions {}
 
-export { BarContext } from "../../bar/rest/index.js";
+export { BarContext } from "@msinternal/multiclient/bar/rest";
 
 /** Bar */
 export function createBar(

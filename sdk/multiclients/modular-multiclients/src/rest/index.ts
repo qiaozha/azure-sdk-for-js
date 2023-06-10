@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-import FooRestClient from "../foo/rest/fooClient.js";
+import FooRestClient from "@msinternal/multiclient/foo/rest";
 
-export * from "../foo/rest/index.js"
+export * from "@msinternal/multiclient/foo/rest";
 export default FooRestClient;

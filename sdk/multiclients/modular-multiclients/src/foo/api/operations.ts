@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-import { FooContext, isUnexpected } from "../../foo/rest/index.js";
+import { FooContext, isUnexpected } from "@msinternal/multiclient/foo/rest";
 import { StreamableMethod } from "@azure-rest/core-client";
 import { Resource, CustomPage } from "./models.js";
 import { RequestOptions } from "../../common/interfaces.js";

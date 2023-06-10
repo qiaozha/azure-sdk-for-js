@@ -15,4 +15,4 @@ export {
   FooContext,
   Resource,
   CustomPage,
-} from "../foo/api/index.js";;
+} from "@msinternal/multiclient/foo/api";;

@@ -2,19 +2,19 @@
 // Licensed under the MIT license.
 
 import {
-    createBar,
-    BarClientOptions,
-    BarContext,
-    Resource,
-    getBinary,
-    getArray,
-    createWithHeaders,
-    deleteWithHeaders,
-    GetBinaryOptions,
-    GetArrayOptions,
-    CreateWithHeadersOptions,
-    DeleteWithHeadersOptions,
-} from './api/index.js';
+  createBar,
+  BarClientOptions,
+  BarContext,
+  Resource,
+  getBinary,
+  getArray,
+  createWithHeaders,
+  deleteWithHeaders,
+  GetBinaryOptions,
+  GetArrayOptions,
+  CreateWithHeadersOptions,
+  DeleteWithHeadersOptions,
+} from "@msinternal/multiclient/bar/api";
 
 export class BarClient {
     private _client: BarContext;

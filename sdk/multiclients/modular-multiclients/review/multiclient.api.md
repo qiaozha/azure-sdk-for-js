@@ -4,71 +4,30 @@
 
 ```ts
 
-import { Client } from '@azure-rest/core-client';
-import { ClientOptions } from '@azure-rest/core-client';
-import { ErrorResponse } from '@azure-rest/core-client';
-import { HttpResponse } from '@azure-rest/core-client';
-import { Paged } from '@azure/core-paging';
-import { RawHttpHeaders } from '@azure/core-rest-pipeline';
-import { RawHttpHeadersInput } from '@azure/core-rest-pipeline';
-import { RequestParameters } from '@azure-rest/core-client';
-import { StreamableMethod } from '@azure-rest/core-client';
+import { CreateOrUpdateOptions } from '@msinternal/multiclient/api';
+import { CustomPage } from '@msinternal/multiclient/api';
+import { DeleteOptions } from '@msinternal/multiclient/api';
+import { FooClient } from '@msinternal/multiclient/foo';
+import { FooClientOptions } from '@msinternal/multiclient/api';
+import { GetOptions } from '@msinternal/multiclient/api';
+import { ListOptions } from '@msinternal/multiclient/api';
+import { Resource } from '@msinternal/multiclient/api';
 
-// Warning: (ae-forgotten-export) The symbol "FooContext" needs to be exported by the entry point index.d.ts
-//
-// @public
-export function createFoo(endpoint: string, options?: FooClientOptions): FooContext;
+export { CreateOrUpdateOptions }
 
-// Warning: (ae-forgotten-export) The symbol "RequestOptions" needs to be exported by the entry point index.d.ts
-//
-// @public (undocumented)
-export interface CreateOrUpdateOptions extends RequestOptions {
-    // (undocumented)
-    description?: string;
-}
+export { CustomPage }
 
-// @public
-export interface CustomPage {
-    nextLink?: string;
-    value: Resource[];
-}
+export { DeleteOptions }
 
-// @public (undocumented)
-export interface DeleteOptions extends RequestOptions {
-}
+export { FooClient }
 
-// @public (undocumented)
-export class FooClient {
-    constructor(endpoint: string, options?: FooClientOptions);
-    createOrUpdate(type: string, name: string, options?: CreateOrUpdateOptions): Promise<Resource>;
-    deleteOperation(name: string, options?: DeleteOptions): Promise<void>;
-    get(name: string, options?: GetOptions): Promise<Resource>;
-    list(options?: ListOptions): Promise<CustomPage>;
-}
+export { FooClientOptions }
 
-// @public (undocumented)
-export interface FooClientOptions extends ClientOptions {
-}
+export { GetOptions }
 
-// @public (undocumented)
-export interface GetOptions extends RequestOptions {
-}
+export { ListOptions }
 
-// @public (undocumented)
-export interface ListOptions extends RequestOptions {
-}
-
-// @public (undocumented)
-export interface Resource {
-    // (undocumented)
-    description?: string;
-    // (undocumented)
-    readonly id: string;
-    // (undocumented)
-    readonly name: string;
-    // (undocumented)
-    type: string;
-}
+export { Resource }
 
 // (No @packageDocumentation comment for this package)
 

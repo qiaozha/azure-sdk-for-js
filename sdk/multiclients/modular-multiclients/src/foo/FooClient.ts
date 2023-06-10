@@ -15,7 +15,7 @@ import {
   GetOptions,
   DeleteOptions,
   ListOptions,
-} from "./api/index.js";
+} from "@msinternal/multiclient/foo/api";
 
 export class FooClient {
   private _client: FooContext;

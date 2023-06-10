@@ -3,9 +3,8 @@ export {
   GetOptions,
   DeleteOptions,
   ListOptions,
-  Resource, 
+  Resource,
   CustomPage,
-  createFoo, 
-  FooClientOptions 
- } from "./api/index.js";
- export { FooClient } from "./foo/FooClient.js";
+  FooClientOptions,
+} from "@msinternal/multiclient/api";
+ export { FooClient } from "@msinternal/multiclient/foo";
