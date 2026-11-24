@@ -22,6 +22,7 @@ pr:
       - feature/*
       - release/*
       - hotfix/*
+      - rehearsal/js-40489-base
     exclude:
       - feature/v4
   paths:
