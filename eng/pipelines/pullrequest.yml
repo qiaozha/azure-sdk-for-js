@@ -1,5 +1,3 @@
-trigger: none
-
 pr:
   branches:
     include:
@@ -8,7 +6,6 @@ pr:
     - hotfix/*
     - release/*
     - pipelinev3*
-    - rehearsal/*
   paths:
     include:
     - "*"
@@ -28,4 +25,3 @@ extends:
   parameters:
     ServiceDirectory: ${{ parameters.Service }}
     SkipPrValidation: ${{ parameters.SkipPrValidation }}
-    IncludeRelease: false
