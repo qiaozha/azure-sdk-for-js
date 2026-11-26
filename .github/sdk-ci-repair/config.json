@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "enabled": false,
+  "repository": "qiaozha/azure-sdk-for-js",
+  "shared_revision": "dff773d330173898eb5bfc9955dfe4509f2fab7b",
+  "dispatch_app_login": null,
+  "state_endpoint": "https://apitosdksstc12292.blob.core.windows.net",
+  "state_container": "repair-state",
+  "packages": {
+    "@azure/arm-monitor": {
+      "path": "sdk/monitor/arm-monitor",
+      "allowed_files": [
+        "sdk/monitor/arm-monitor/src/index.ts"
+      ]
+    }
+  },
+  "images": {}
+}
